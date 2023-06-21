@@ -10,42 +10,64 @@ form.addEventListener('submit', function (event) {
   const nome = document.getElementById('nome').value;
   const departamento = document.getElementById('departamento').value;
 
-  const canvas = document.createElement('canvas');
-  const context = canvas.getContext('2d');
+  const originalCanvas = document.createElement('canvas');
+  const originalContext = originalCanvas.getContext('2d');
   const image = new Image();
   image.src = 'img/background_default.png';
   image.onload = function () {
-    canvas.width = image.width;
-    canvas.height = image.height;
-    context.drawImage(image, 0, 0);
+    originalCanvas.width = image.width;
+    originalCanvas.height = image.height;
+    originalContext.drawImage(image, 0, 0);
 
-    const nomeX = canvas.width / 2 + 730;
-    const nomeY = canvas.height / 2 - 30;
-    const departamentoX = canvas.width / 2 + 730;
-    const departamentoY = canvas.height / 2 + 30;
+    const nomeX = originalCanvas.width / 2 + 730;
+    const nomeY = originalCanvas.height / 2 - 30;
+    const departamentoX = originalCanvas.width / 2 + 730;
+    const departamentoY = originalCanvas.height / 2 + 30;
 
-    context.fillStyle = '#000000'; // Cor do texto
-    context.font = 'bold 30px Arial';
-    context.textAlign = 'center';
-    context.fillText(nome, nomeX, nomeY);
-    context.fillText(departamento, departamentoX, departamentoY);
+    originalContext.fillStyle = '#000000'; // Cor do texto
+
+    // Texto do nome com fonte maior
+    originalContext.font = 'bold 42px Arial';
+    originalContext.textAlign = 'center';
+    originalContext.fillText(nome, nomeX, nomeY);
+
+    // Texto do departamento com fonte padrão
+    originalContext.font = 'bold 34px Arial';
+    originalContext.textAlign = 'center';
+    originalContext.fillText(departamento, departamentoX, departamentoY);
 
     previewDiv.innerHTML = '';
     const previewImage = new Image();
-    previewImage.src = canvas.toDataURL('image/png');
+    previewImage.src = originalCanvas.toDataURL('image/png');
     previewImage.className = 'img-fluid';
     previewDiv.appendChild(previewImage);
 
-    html2canvas(canvas).then(function (canvas) {
+    const tempCanvas = document.createElement('canvas');
+    const tempContext = tempCanvas.getContext('2d');
+    tempCanvas.width = originalCanvas.width;
+    tempCanvas.height = originalCanvas.height;
+    tempContext.drawImage(originalCanvas, 0, 0);
+
+    html2canvas(tempCanvas).then(function (canvas) {
       resultadoDiv.innerHTML = '';
       resultadoDiv.style.display = 'block';
       resultadoDiv.appendChild(canvas);
 
-      const link = document.createElement('a');
-      link.href = canvas.toDataURL('image/png');
-      link.download = 'background_teams.png';
-      link.textContent = 'Baixar Fundo';
-      resultadoDiv.appendChild(link);
+      const button = document.createElement('button');
+      button.textContent = 'Baixar Fundo';
+      button.style.display = 'block';
+      button.style.marginTop = '10px';
+      button.style.textAlign = 'center';
+      button.addEventListener('click', function () {
+        const link = document.createElement('a');
+        link.href = canvas.toDataURL('image/png');
+        link.download = 'background_teams.png';
+        link.click();
+      });
+
+      const cardFooter = document.querySelector('.card-footer');
+      cardFooter.innerHTML = '';
+      cardFooter.appendChild(button);
     });
   };
 });

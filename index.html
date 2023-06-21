@@ -23,18 +23,48 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="departamento" class="form-label">Departamento:</label>
-                        <input type="text" class="form-control" id="departamento" required>
+                        <div class="form-group">
+                            <label for="departamento">Seu departamento</label>
+                            <select class="form-control" id="departamento">
+                                <option value="Contábil" selected>Departamento Contábil</option>
+                                <option value="Financeiro">Departamento Financeiro</option>
+                                <option value="Fiscal">Departamento Fiscal</option>
+                                <option value="Folha de Pagamento">Departamento de Folha de Pagamento</option>
+                                <option value="Jurídico">Departamento Jurídico</option>
+                                <option value="Comercial">Departamento Comercial</option>
+                                <option value="Marketing">Departamento de Marketing</option>
+                                <option value="RH">Departamento de Recursos Humanos</option>
+                                <option value="Tecnologia">Departamento de Tecnologia</option>
+                                <option value="Administrativo">Departamento Administrativo</option>
+                                <option value="Implantação">Departamento de Implantação</option>
+                                <option value="Processamento de Dados">Departamento de Processamento de Dados</option>
+                                <option value="Risk Advisory Services">Departamento de Risk Advisory Services</option>
+                                <option value="Governança">Departamento de Governança</option>
+                            </select>
+                                                    </div>
                     </div>
 
                     <button type="submit" class="btn btn-primary">Gerar Fundo</button>
                 </form>
             </div>
             <div class="col-md-8">
-                <div id="preview">
-                    <img src="img/background.png" alt="Imagem de Fundo" class="img-fluid">
-                    <div class="overlay-text" id="nome-text"></div>
-                    <div class="overlay-text" id="departamento-text"></div>
+                <div class="card shadow">
+                    <div class="card-header text-center">
+                        www.bpoinnova.com
+                    </div>
+                    <div class="card-body">
+                        <div id="preview">
+                            <video autoplay loop class="img-fluid">
+                                <source src="img/video.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                              </video>
+                            <div class="overlay-text" id="nome-text"></div>
+                            <div class="overlay-text" id="departamento-text"></div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+
+                    </div>
                 </div>
             </div>
         </div>
