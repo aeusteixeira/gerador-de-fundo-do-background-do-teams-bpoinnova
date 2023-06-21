@@ -13,7 +13,7 @@ form.addEventListener('submit', function (event) {
   const canvas = document.createElement('canvas');
   const context = canvas.getContext('2d');
   const image = new Image();
-  image.src = 'img/background.png';
+  image.src = 'img/background_default.png';
   image.onload = function () {
     canvas.width = image.width;
     canvas.height = image.height;
