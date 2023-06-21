@@ -16,7 +16,7 @@ Este é um projeto simples que consiste em uma aplicação web para gerar o fund
 ## Pré-requisitos
 - Navegador web moderno
 
-##Como usar
+## Como usar
 - Faça o download ou clone este repositório.
 - Abra o arquivo index.html em um navegador web.
 - Preencha o campo "Nome" com o seu nome.
