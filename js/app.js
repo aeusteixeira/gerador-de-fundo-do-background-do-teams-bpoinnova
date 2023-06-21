@@ -48,26 +48,11 @@ form.addEventListener('submit', function (event) {
     tempCanvas.height = originalCanvas.height;
     tempContext.drawImage(originalCanvas, 0, 0);
 
-    html2canvas(tempCanvas).then(function (canvas) {
-      resultadoDiv.innerHTML = '';
-      resultadoDiv.style.display = 'block';
-      resultadoDiv.appendChild(canvas);
+    const link = document.createElement('a');
+    link.href = tempCanvas.toDataURL('image/png');
+    link.download = 'background_teams.png';
+    link.click();
 
-      const button = document.createElement('button');
-      button.textContent = 'Baixar Fundo';
-      button.style.display = 'block';
-      button.style.marginTop = '10px';
-      button.style.textAlign = 'center';
-      button.addEventListener('click', function () {
-        const link = document.createElement('a');
-        link.href = canvas.toDataURL('image/png');
-        link.download = 'background_teams.png';
-        link.click();
-      });
-
-      const cardFooter = document.querySelector('.card-footer');
-      cardFooter.innerHTML = '';
-      cardFooter.appendChild(button);
-    });
   };
+  
 });
