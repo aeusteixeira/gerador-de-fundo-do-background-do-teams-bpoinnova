@@ -1,0 +1,36 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+  }
+
+  #preview {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  #resultado {
+    display: none;
+    margin-top: 20px;
+  }
+
+  #resultado img {
+    max-width: 100%;
+  }
+
+  #resultado a {
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .overlay-text {
+    position: absolute;
+    font-weight: bold;
+    color: #000;
+    text-align: center;
+    pointer-events: none;
+  }
