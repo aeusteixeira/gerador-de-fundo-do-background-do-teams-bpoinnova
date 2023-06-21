@@ -23,30 +23,91 @@
                     </div>
 
                     <div class="mb-3">
-                        <div class="form-group">
-                            <label for="departamento">Seu departamento</label>
-                            <select class="form-control" id="departamento">
-                                <option value="Contábil" selected>Departamento Contábil</option>
-                                <option value="Financeiro">Departamento Financeiro</option>
-                                <option value="Fiscal">Departamento Fiscal</option>
-                                <option value="Folha de Pagamento">Departamento de Folha de Pagamento</option>
-                                <option value="Jurídico">Departamento Jurídico</option>
-                                <option value="Comercial">Departamento Comercial</option>
-                                <option value="Marketing">Departamento de Marketing</option>
-                                <option value="RH">Departamento de Recursos Humanos</option>
-                                <option value="Tecnologia">Departamento de Tecnologia</option>
-                                <option value="Administrativo">Departamento Administrativo</option>
-                                <option value="Implantação">Departamento de Implantação</option>
-                                <option value="Processamento de Dados">Departamento de Processamento de Dados</option>
-                                <option value="Risk Advisory Services">Departamento de Risk Advisory Services</option>
-                                <option value="Governança">Departamento de Governança</option>
-                            </select>
-                                                    </div>
+                        <label for="departamento" class="form-label">Seu departamento:</label>
+                        <select class="form-control" id="departamento">
+                            <option value="Contábil" selected>Departamento Contábil</option>
+                            <option value="Financeiro">Departamento Financeiro</option>
+                            <option value="Fiscal">Departamento Fiscal</option>
+                            <option value="Folha de Pagamento">Departamento de Folha de Pagamento</option>
+                            <option value="Jurídico">Departamento Jurídico</option>
+                            <option value="Comercial">Departamento Comercial</option>
+                            <option value="Marketing">Departamento de Marketing</option>
+                            <option value="Recursos Humanos">Departamento de Recursos Humanos</option>
+                            <option value="Tecnologia">Departamento de Tecnologia</option>
+                            <option value="Administrativo">Departamento Administrativo</option>
+                            <option value="Implantação">Departamento de Implantação</option>
+                            <option value="Processamento de Dados">Departamento de Processamento de Dados</option>
+                            <option value="Risk Advisory Services">Departamento de Risk Advisory Services</option>
+                            <option value="Governança">Departamento de Governança</option>
+                        </select>
                     </div>
 
                     <button type="submit" class="btn btn-primary">Gerar Fundo</button>
+                    <hr>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-link p-0 text-light" data-bs-toggle="modal" data-bs-target="#precisoDeAjuda">
+                        Precisa de ajuda?
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="precisoDeAjuda" tabindex="-1" aria-labelledby="precisoDeAjudaLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title text-dark" id="precisoDeAjudaLabel">
+                                        Como baixar e instalar o seu novo fundo do Teams
+                                    </h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body text-dark">
+                                    <ol>
+                                        <li>
+                                            Após preencher o seu nome e departamento, clique em <b>Gerar Fundo</b>.
+                                        </li>
+                                        <li>
+                                            2Aguarde até que a imagem seja gerada e exibida na página.
+                                        </li>
+                                        <li>
+                                            Clique com o botão direito na imagem gerada e selecione "<b>Salvar imagem como</b>" para fazer o download da imagem para o seu computador.
+                                        </li>
+                                        <li>
+                                            Acesse o Microsoft Teams e faça login em sua conta.
+                                        </li>
+                                        <li>
+                                            No aplicativo Teams, clique no seu perfil no canto superior direito e selecione "<b>Configurações</b>".
+                                        </li>
+                                        <li>
+                                            Na guia "<b>Geral</b>", role para baixo até a seção "<b>Fundo</b>" e clique em "<b>Adicionar</b>" para adicionar um novo fundo.
+                                        </li>
+                                        <li>
+                                            Selecione a imagem que você baixou anteriormente em seu computador e clique em "<b>Abrir</b>".
+                                        </li>
+                                        <li>
+                                            8guarde enquanto o Teams carrega e aplica o novo fundo. Você pode visualizar o fundo selecionado antes de aplicá-lo.
+                                        </li>
+                                        <li>
+                                            9Uma vez que o novo fundo tenha sido aplicado com sucesso, clique em "<b>Salvar</b>" para salvar suas alterações.
+                                        </li>
+                                        <li>
+                                            Pronto! Agora você tem um novo fundo personalizado para usar no Microsoft Teams.
+                                        </li>
+                                    </ol>                                  
+                                </div>
+                                
+                                
+                                
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Entendi, obrigado</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </form>
             </div>
+
             <div class="col-md-8">
                 <div class="card shadow">
                     <div class="card-header text-center">
@@ -57,7 +118,7 @@
                             <video autoplay loop class="img-fluid">
                                 <source src="img/video.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
-                              </video>
+                            </video>
                             <div class="overlay-text" id="nome-text"></div>
                             <div class="overlay-text" id="departamento-text"></div>
                         </div>
