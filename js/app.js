@@ -19,9 +19,9 @@ form.addEventListener('submit', function (event) {
     canvas.height = image.height;
     context.drawImage(image, 0, 0);
 
-    const nomeX = canvas.width / 2;
+    const nomeX = canvas.width / 2 + 730;
     const nomeY = canvas.height / 2 - 30;
-    const departamentoX = canvas.width / 2;
+    const departamentoX = canvas.width / 2 + 730;
     const departamentoY = canvas.height / 2 + 30;
 
     context.fillStyle = '#000000'; // Cor do texto
