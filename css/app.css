@@ -7,7 +7,8 @@ body {
     background-image: url('../img/background_body.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    color: aliceblue;
+    background-blend-mode: lighten;
+    background-color: rgba(255, 255, 255, 0.5);
   }
 
   #preview {
